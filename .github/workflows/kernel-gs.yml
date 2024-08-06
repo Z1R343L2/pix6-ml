@@ -83,7 +83,7 @@ jobs:
       working-directory: workspace
     - name: Compile kernel
       run: |
-        echo "$PATH:$HOME/workspace/prebuilts/clang/host/linux-x86/clang-r450784e/bin" >> $GITHUB_PATH
+        echo "$HOME/workspace/prebuilts/clang/host/linux-x86/clang-r450784e/bin" >> $GITHUB_PATH
         ./build_slider.sh
       working-directory: workspace
     - name: Move flashable images
