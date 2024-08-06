@@ -40,7 +40,7 @@ jobs:
         echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
         git config --global user.name "reocat"
         git config --global user.email "ng.ct_ml@tuta.io"
-        repo init -u https://github.com/Z1R343L2/oriole-ml-manifest -b gs-bluraviole
+        repo init -u  repo init -u https://github.com/gs-bluraviole/bluraviole-manifest --depth 1
       id: pwd
 #    - name: Fetch vendor_boot
 #      run: |
@@ -60,7 +60,7 @@ jobs:
 #      working-directory: workspace
     - name: Fetch vendor_boot
       run: |
-          aria2c -j$(nproc --all) -o rom.zip https://github.com/reocat/mirror/releases/download/20240628/signed-ota_update.zip
+          aria2c -j$(nproc --all) -o rom.zip https://dl.google.com/dl/android/aosp/oriole-ota-ap1a.240505.004-97dc7f29.zip
           curl -fsSL https://github.com/ssut/payload-dumper-go/releases/download/1.2.2/payload-dumper-go_1.2.2_linux_amd64.tar.gz | tar -xzvf -
           sudo mv payload-dumper-go /bin
           payload-dumper-go -p vendor_boot rom.zip
