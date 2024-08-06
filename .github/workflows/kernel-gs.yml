@@ -81,10 +81,10 @@ jobs:
         cd aosp
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
       working-directory: workspace
+    - name: add clang to path
+      run: echo "$HOME/workspace/prebuilts/clang/host/linux-x86/clang-r450784e/bin" >> $GITHUB_PATH
     - name: Compile kernel
-      run: |
-        echo "$HOME/workspace/prebuilts/clang/host/linux-x86/clang-r450784e/bin" >> $GITHUB_PATH
-        ./build_slider.sh
+      run: ./build_slider.sh
       working-directory: workspace
     - name: Move flashable images
       run: |
