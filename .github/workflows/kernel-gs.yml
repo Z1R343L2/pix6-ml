@@ -82,7 +82,9 @@ jobs:
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
       working-directory: workspace
     - name: Compile kernel
-      run: ./build_slider.sh
+      run: |
+        export PATH="$PATH:$HOME/workspace/prebuilts/clang/host/linux-x86/clang-r450784e/bin"
+        ./build_slider.sh
       working-directory: workspace
     - name: Move flashable images
       run: |
